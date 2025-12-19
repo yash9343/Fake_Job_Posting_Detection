@@ -9,7 +9,7 @@ st.title("Fake Job Posting Detection System")
 
 @st.cache_data
 def load_model():
-    df = pd.read_csv("fake_job_postings.csv").fillna("")
+    df = pd.read_csv("fake_job_postings_small.csv").fillna("")
     df['text'] = df['title'] + " " + df['company_profile'] + " " + df['description'] + " " + df['requirements']
 
     def clean_text(text):
